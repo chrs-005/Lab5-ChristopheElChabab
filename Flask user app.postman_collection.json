@@ -1,0 +1,324 @@
+{
+  "info": {
+    "name": "Flask user app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 GET all users - empty",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "02 POST add user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/users/add",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/users/add",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"name\": \"John Doe\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "03 GET all users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n  {\n    \"name\": \"John Doe\",\n    \"email\": \"jondoe@gamil.com\",\n    \"phone\": \"067765434567\",\n    \"address\": \"John Doe Street, Innsbruck\",\n    \"country\": \"Austria\",\n    \"user_id\": 1\n  }\n]"
+        }
+      ]
+    },
+    {
+      "name": "04 GET user by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users/1"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users/1"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"name\": \"John Doe\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "05 PUT update user",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/users/update",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Smith\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/users/update",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Smith\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"name\": \"John Smith\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"067765434567\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "06 PATCH update phone",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/users/update",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"phone\": \"0123456789\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/users/update",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"phone\": \"0123456789\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"name\": \"John Smith\",\n  \"email\": \"jondoe@gamil.com\",\n  \"phone\": \"0123456789\",\n  \"address\": \"John Doe Street, Innsbruck\",\n  \"country\": \"Austria\",\n  \"user_id\": 1\n}"
+        }
+      ]
+    },
+    {
+      "name": "07 DELETE user",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{base_url}}/api/users/delete/1"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/api/users/delete/1"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"status\": \"User deleted successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "08 GET all users - after delete",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/users"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/api/users"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    }
+  ]
+}
